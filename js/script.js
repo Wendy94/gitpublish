@@ -49,19 +49,6 @@ function BegerArrangement(groupNum){
 		}
 		round++;
 	}
-
-// for(var k=0; k<roundNum; k++){
-// 		console.log("round:"+(k+1).toString());
-// 			for(var i=0; i<num/2; i++){
-// 				var a=result[i][k*2];
-// 				var b=result[i][k*2+1];
-// 				var temp= a + " vs " + b;
-// 				console.log(temp);
-// 		}
-		
-// 		console.log("\n");
-// 	}
-
 	return result;
 	
 
@@ -90,51 +77,88 @@ $(document).ready(function() {
 	        {  
 	            FieldCount++; //text box added increment  
 	            //add input box  
-	            $(InputsWrapper).append('<div><input type="text" name="mytext[]" id="field_'+ FieldCount +'" value="队伍 '+ FieldCount +'"/></div>');  
+	            $(InputsWrapper).append('<div ><input type="text" id="field_'+ FieldCount +'" value="队伍 '+ FieldCount +'"/></div>');  
 	            x++; //text box increment  
-	        }  
-	return false;  
+	        }   
 	});  
 });  
 
+$(document).ready(function(){
+  $("h2").click(function(){
+    $(".panel").slideToggle("slow");
+  });
+});
+
+$(document).ready(function(){
+	$("#clearall").click(function(){
+		$("#InputsWrapper").empty();
+		$(".roundblock").remove();
+		$("#AddMoreFileBox").removeAttr("disabled");
+		// $('#AddMoreFileBox').prop('disabled', false);
+		FieldCount=1;
+		$("#InputsWrapper").append('<div ><input type="text" id="field_1' +'" value="队伍 1"/></div>');
+	});
+});
+
+
 function show(){
 
-	 $('a').addClass('disabled'); // Disables visually
-	$('a').prop('disabled', true); // Does nothing
-	$('a').attr('disabled', 'disabled'); // Disables visually 
+	//$('#AddMoreFileBox').addClass('disabled'); // Disables visually
+	$('#AddMoreFileBox').prop('disabled', true); // Does nothing
+	$('#AddMoreFileBox').attr('disabled', 'disabled'); // Disables visually 
 
 
 	for(var i=1;i<=FieldCount;i++){
 		var tmp="field_"+i.toString();
 		groupName[i]=document.getElementById(tmp.toString()).value;
-		groupName[0]="轮空";
+		groupName[0]=" 轮空";
 	}
 
 	var result=BegerArrangement(FieldCount);
 	var num=FieldCount;
 	var roundNum=num-1;
-	var matchtext="";
+	//var matchtext="";
 	for(var k=0; k<roundNum; k++){
-		matchtext+="round:"+(k+1).toString()+"<br /> ";
-			for(var i=0; i<num/2; i++){
-				var a=result[i][k*2];
-				var b=result[i][k*2+1];
-				a=groupName[a];
-				b=groupName[b];
-				var temp= a + " vs " + b;
-				if(a=="轮空"){
-					temp=b+a;
-				}
-				else if(b=="轮空"){
-					temp=a+b;
-				}
-				
-				matchtext+=temp+"<br /> ";
+
+		var div=document.createElement("div");
+		 $(div).addClass("col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xxs-12 roundblock text-center");
+
+		var top="round:"+(k+1).toString();
+		var para=document.createElement("p");
+		var node=document.createTextNode(top);
+		para.appendChild(node);
+		div.appendChild(para);
+		var element=document.getElementById("matchbox");
+		element.appendChild(div);
+
+		//$(div).append('<div><input type="text"  class="avsb" value="'+ FieldCount +'"/></div>');
+
+		for(var i=0; i<num/2; i++){
+			var a=result[i][k*2];
+			var b=result[i][k*2+1];
+			a=groupName[a];
+			b=groupName[b];
+			var temp= a + " vs " + b;
+			if(a==" 轮空"){
+				temp=b+a;
+			}
+			else if(b==" 轮空"){
+				temp=a+b;
+			}
+			
+			var para=document.createElement("p");
+			var node=document.createTextNode(temp);
+			para.appendChild(node);
+			//var element=document.getElementById("matchbox");
+			div.appendChild(para);
+
+			//matchtext+=temp+"<br /> ";
 		}
-		matchtext+="<br /> ";
+		//matchtext+="<br /> ";
+		$(".roundblock").fadeIn("slow");
 		
 	}
-	console.log(matchtext);
-	document.getElementById("matchbox").innerHTML=matchtext;
+	//console.log(matchtext);
+	//document.getElementById("matchbox").innerHTML=matchtext;
 
 }

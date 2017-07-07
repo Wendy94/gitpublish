@@ -32,31 +32,33 @@
             <h1 id="top">贝格尔排序</h1>
           </div>
 
- 
         </div>
 
-        
       </div><!-- .container -->
     </nav><!-- #header-nav -->
   </header>
 
 <h1 id="bodyheader">创建单循环赛</h1>
+<h2>点击查看注意事项</h2>
 <div class="container">
-<div id="main" >
-        <!-- Button trigger modal -->
-    <a href="#" id="AddMoreFileBox" class="btn btn-info" >添加队伍</a>  
-    <a href="#" id="showMatch" class="btn btn-info" onclick="show()">显示对战图</a></span></p> 
-      <div id="InputsWrapper">  
-      <div><input type="text" name="mytext[]" id="field_1" value="队伍 1"/></div>  
-      </div>  
-      <hr>
-      <div ><p id="matchbox"></p>
-      </div>    
+  <div class="panel center-block">
+  <p>点击“添加队伍”可以修改添加队伍名称</p>
+  <p>点击“显示对战图”将会显示对战图</p>
+  </div>
+
+ <div class="row" id="matchbox">
+    <center><a href="#" id="AddMoreFileBox" class="btn btn-primary">添加队伍</a>  
+    <a href="#" id="showMatch" class="btn btn-info" onclick="show()">显示对战图</a> 
+    <a href="#" id="clearall" class="btn btn-success" >重新开始</a> 
+    <div id="InputsWrapper" >  
+    <div ><input type="text" id="field_1" value="队伍 1"/></div>  
+    </div> </center> 
+    <hr>
     
-    <!-- <label for="groupNumber" class="control-label">队伍数量:</label>
-    <input type="text"  id="groupNum"> -->
- </div>  
- </div>
+    <!-- <div  class="col-lg-2 col-md-3 col-sm-4 col-xs-6 col-xxs-12"></div>  -->
+  </div> 
+
+</div>
   
 </body>
 </html>

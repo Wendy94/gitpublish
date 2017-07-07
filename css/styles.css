@@ -6,7 +6,7 @@
   border-right: none;
 }
 .navbar-default .navbar-toggle {
-      border-color: black;
+  border-color: black;
 }
 
 .navbar-default .navbar-collapse, .navbar-default .navbar-form{
@@ -34,16 +34,55 @@
   font-size:175%;
 }
 
-#main{
- /* border: 2px solid black;*/
-  /*background-color: green;*/
-  /*width: 90;
-  height: 150px;*/
+#row{
   font-family: Century Gothic;
-   font-weight: bold;
+  font-weight: bold;
   /*color: black;*/
   margin-left: auto;
   margin-right: auto;
-
 }
 
+
+
+div.panel{
+  display:none;
+  margin-bottom: :2px;
+  padding:5px;
+  text-align:center;
+  color: brown;
+  background-color: #f17c67;
+  border-radius: 10px;
+  width: 300px;
+
+  /*opacity: .7;*/
+  /*border:solid 1px #c3c3c3;*/
+}
+
+h2{
+  margin-top: 0px;
+  margin-bottom: 15px;
+  text-align:center;
+  font-family: Century Gothic;
+  font-size:60%;
+}
+
+.roundblock{
+  display:none;
+  border:solid 1px #c3c3c3;
+  background-color: black 
+  text-align: center;
+  text-transform: uppercase;
+  background-color: #000;
+  color: #fff;
+  opacity: .7;
+  width: 50%;
+}
+
+#InputsWrapper{
+  margin-top: 2px;
+}
+
+hr{
+   border: 1px  solid black;
+   text-align: center;
+}
