@@ -12,6 +12,7 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
 
+
     <title>Berger Arrangement</title>
     <link rel="stylesheet" href="css/bootstrap.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -21,7 +22,7 @@
   <script src="js/script.js"></script>
 
   </head>
-<body>
+<body >
 
    <header>
     <nav id="header-nav" class="navbar navbar-default">
@@ -33,10 +34,14 @@
           </div>
 
         </div>
-
       </div><!-- .container -->
     </nav><!-- #header-nav -->
   </header>
+
+<div class="container" id="test">
+<canvas id="canvas"></canvas>
+<div id="intro" class="center-block hidden-sm hidden-xs">从1985年起，世界性比赛多采用“贝格”“编排法。其优点是单数队参加时可避免第二轮的轮空队从第四轮起每场都与前一轮的轮空队比赛的不合理现象。采用“贝格尔”编排法，编排时如果参赛队为双数时，把参赛队数分一半(参赛队为单数时，最后以“0”表示形成双数)，前一半由1号开始，自上而下写在左边；后一半的数自下而上写在右边，然后用横线把相对的号数连接起来。这即是第一轮的比赛。第二轮将第一轮右上角的编号(“0”或最大的一个代号数)移到左角上，三轮又移到右角上，以此类推。即单数轮次时“0”或最大的一个代号在右上角，双数轮次时则在左上角。</div>
+</div>
 
 <h1 id="bodyheader">创建单循环赛</h1>
 <h2>点击查看注意事项</h2>
