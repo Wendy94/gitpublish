@@ -97,6 +97,7 @@ $(document).ready(function(){
 		// $('#AddMoreFileBox').prop('disabled', false);
 		FieldCount=1;
 		$("#InputsWrapper").append('<div ><input type="text" id="field_1' +'" value="队伍 1"/></div>');
+		$("#InputsWrapper").show();
 	});
 });
 
@@ -106,7 +107,7 @@ function show(){
 	//$('#AddMoreFileBox').addClass('disabled'); // Disables visually
 	$('#AddMoreFileBox').prop('disabled', true); // Does nothing
 	$('#AddMoreFileBox').attr('disabled', 'disabled'); // Disables visually 
-
+	$("#InputsWrapper").hide();
 
 	for(var i=1;i<=FieldCount;i++){
 		var tmp="field_"+i.toString();
@@ -120,16 +121,21 @@ function show(){
 	//var matchtext="";
 	for(var k=0; k<roundNum; k++){
 
+		var div1=document.createElement("div");
+		 $(div1).addClass("col-lg-3 col-md-4 col-sm-6 col-xs-12 col-xxs-12 ");
+
 		var div=document.createElement("div");
-		 $(div).addClass("col-lg-6 col-md-6 col-sm-6 col-xs-6 col-xxs-12 roundblock text-center");
+		$(div).addClass("roundblock text-center");
+		div1.appendChild(div);
 
 		var top="round:"+(k+1).toString();
 		var para=document.createElement("p");
 		var node=document.createTextNode(top);
 		para.appendChild(node);
 		div.appendChild(para);
+
 		var element=document.getElementById("matchbox");
-		element.appendChild(div);
+		element.appendChild(div1);
 
 		//$(div).append('<div><input type="text"  class="avsb" value="'+ FieldCount +'"/></div>');
 
